@@ -1,0 +1,852 @@
+{
+	"folders": [
+		{
+			"name": "Thunderstrike",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp",
+			"vadimcn.vscode-lldb",
+			"ms-vscode.mono-debug",
+			"dfarley1.file-picker"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Thunderstrike Mac Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"Debug",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"Debug",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Thunderstrike Mac Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"Debug",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"DebugGame",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"DebugGame",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Thunderstrike Mac DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"DebugGame",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"Development",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"Development",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Thunderstrike Mac Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"Development",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"Test",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"Test",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Thunderstrike Mac Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"Test",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"Shipping",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"Shipping",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Thunderstrike Mac Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike Mac Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"Mac",
+					"Shipping",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"Debug",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"Debug",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Thunderstrike IOS Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"Debug",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"DebugGame",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"DebugGame",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Thunderstrike IOS DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"DebugGame",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"Development",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"Development",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Thunderstrike IOS Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"Development",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"Test",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"Test",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Thunderstrike IOS Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"Test",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"Shipping",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"Shipping",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Thunderstrike IOS Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "Thunderstrike IOS Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Thunderstrike",
+					"IOS",
+					"Shipping",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "ThunderstrikeEditor Mac Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThunderstrikeEditor",
+					"Mac",
+					"Debug",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "ThunderstrikeEditor Mac Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThunderstrikeEditor",
+					"Mac",
+					"Debug",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ThunderstrikeEditor Mac Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "ThunderstrikeEditor Mac Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThunderstrikeEditor",
+					"Mac",
+					"Debug",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "ThunderstrikeEditor Mac DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThunderstrikeEditor",
+					"Mac",
+					"DebugGame",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "ThunderstrikeEditor Mac DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThunderstrikeEditor",
+					"Mac",
+					"DebugGame",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ThunderstrikeEditor Mac DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "ThunderstrikeEditor Mac DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThunderstrikeEditor",
+					"Mac",
+					"DebugGame",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "ThunderstrikeEditor Mac Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThunderstrikeEditor",
+					"Mac",
+					"Development",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "ThunderstrikeEditor Mac Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThunderstrikeEditor",
+					"Mac",
+					"Development",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ThunderstrikeEditor Mac Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			},
+			{
+				"label": "ThunderstrikeEditor Mac Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThunderstrikeEditor",
+					"Mac",
+					"Development",
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch Thunderstrike (Debug)",
+				"request": "launch",
+				"program": "/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Binaries/Mac/UnrealGame-Mac-Debug.app/Contents/MacOS/UnrealGame-Mac-Debug",
+				"preLaunchTask": "Thunderstrike Mac Debug Build",
+				"args": [
+				],
+				"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch Thunderstrike (DebugGame)",
+				"request": "launch",
+				"program": "/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Binaries/Mac/UnrealGame-Mac-DebugGame.app/Contents/MacOS/UnrealGame-Mac-DebugGame",
+				"preLaunchTask": "Thunderstrike Mac DebugGame Build",
+				"args": [
+				],
+				"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch Thunderstrike (Development)",
+				"request": "launch",
+				"program": "/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Binaries/Mac/UnrealGame.app/Contents/MacOS/UnrealGame",
+				"preLaunchTask": "Thunderstrike Mac Development Build",
+				"args": [
+				],
+				"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch Thunderstrike (Test)",
+				"request": "launch",
+				"program": "/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Binaries/Mac/UnrealGame-Mac-Test.app/Contents/MacOS/UnrealGame-Mac-Test",
+				"preLaunchTask": "Thunderstrike Mac Test Build",
+				"args": [
+				],
+				"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch Thunderstrike (Shipping)",
+				"request": "launch",
+				"program": "/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Binaries/Mac/UnrealGame-Mac-Shipping.app/Contents/MacOS/UnrealGame-Mac-Shipping",
+				"preLaunchTask": "Thunderstrike Mac Shipping Build",
+				"args": [
+				],
+				"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ThunderstrikeEditor (Debug)",
+				"request": "launch",
+				"program": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3/Engine/Binaries/Mac/UnrealEditor-Mac-Debug.app/Contents/MacOS/UnrealEditor-Mac-Debug",
+				"preLaunchTask": "ThunderstrikeEditor Mac Debug Build",
+				"args": [
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject"
+				],
+				"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ThunderstrikeEditor (DebugGame)",
+				"request": "launch",
+				"program": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3/Engine/Binaries/Mac/UnrealEditor-Mac-DebugGame.app/Contents/MacOS/UnrealEditor-Mac-DebugGame",
+				"preLaunchTask": "ThunderstrikeEditor Mac DebugGame Build",
+				"args": [
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject"
+				],
+				"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ThunderstrikeEditor (Development)",
+				"request": "launch",
+				"program": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor",
+				"preLaunchTask": "ThunderstrikeEditor Mac Development Build",
+				"args": [
+					"/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject"
+				],
+				"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3",
+				"type": "lldb"
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Mac Development Build",
+				"program": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3/Engine/Build/BatchFiles/RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/Volumes/CT1000P3 SSD8 Media/.TEMP/UNREAL PROJECTS/Thunderstrike/Thunderstrike.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/Volumes/CT1000P3 SSD8 Media/Applications/UNREAL_ENGINE/UE_5.3"
+			}
+		]
+	}
+}
