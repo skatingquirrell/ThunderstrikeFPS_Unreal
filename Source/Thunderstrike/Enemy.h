@@ -49,7 +49,7 @@ protected:
 	class UAISenseConfig_Sight *SightConfig;
 
 	UFUNCTION()
-	void OnSensed(const TArray<AActor*>& UpdatedActors);
+	void OnSensed(const TArray<AActor *> &UpdatedActors);
 
 	UPROPERTY(VisibleAnywhere, Category = Movement)
 	FRotator EnemyRotation;
@@ -65,6 +65,8 @@ protected:
 
 	void SetNewRotation(FVector TargetPosition, FVector CurrentPosition);
 
+	void SetMovementAnim(FVector Velocity);
+
 	bool BackToBaseLocation;
 	FVector NewLocation;
 
@@ -72,6 +74,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float Health = 100.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool isAttacking = false;
 
 	UPROPERTY(EditAnywhere)
 	float DamageValue = 5.0f;

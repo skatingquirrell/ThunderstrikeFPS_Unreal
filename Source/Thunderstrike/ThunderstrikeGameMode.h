@@ -13,7 +13,23 @@ class AThunderstrikeGameMode : public AGameModeBase
 
 public:
 	AThunderstrikeGameMode();
+
+	void RestartGameplay(bool Won);
+
+private:
+	void ResetLevel();
+
+public:
+	UPROPERTY(BlueprintReadOnly)
+	int TimerCount = 300;
+
+	UPROPERTY(BlueprintReadOnly)
+	bool HasWon = false;
+
+private:
+	FTimerHandle CountDownTimerHandle = FTimerHandle();
+	void CountDownTimer();
+
+public:
+	void BeginPlay() override;
 };
-
-
-

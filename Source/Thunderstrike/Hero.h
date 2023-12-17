@@ -65,6 +65,9 @@ public:
 	FRotator SpawnRotation;
 	FVector SpawnLocation;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	float Health = 100.0f;
+
 protected:
 	void OnFire();
 
@@ -74,4 +77,6 @@ protected:
 	void TurnAtRate(float Rate);
 	void LookAtRate(float Rate);
 
+public:
+	void DealDamage(float DamageAmount);
 };

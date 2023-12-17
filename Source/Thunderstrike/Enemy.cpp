@@ -87,10 +87,28 @@ void AEnemy::SetupPlayerInputComponent(UInputComponent *PlayerInputComponent)
 
 void AEnemy::DealDamage(float DamageAmount)
 {
+	Health -= DamageAmount;
+	UE_LOG(LogTemp, Warning, TEXT("Enemy HEALTH %f"), Health);
+
+	if (Health <= 0.0f)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ENEMY ELIMINATED!"));
+
+		Destroy()	;
+	}
 }
 
 void AEnemy::OnHit(UPrimitiveComponent *HitComp, AActor *OtherActor, UPrimitiveComponent *OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &Hit)
 {
+	// UE_LOG(LogTemp, Warning, TEXT("CONTACT"));
+
+	//Deal damage to the hero
+	AHero* Char = Cast<AHero>(OtherActor);
+	if(Char)
+	{
+		isAttacking = true;
+		Char->DealDamage(DamageValue);
+	}
 }
 
 void AEnemy::RandomizeMesh()
@@ -126,7 +144,7 @@ void AEnemy::OnSensed(const TArray<AActor *> &UpdatedActors)
 		// chase the opponent if detected, or else go back to base
 		if (Info.LastSensedStimuli[0].WasSuccessfullySensed())
 		{
-			UE_LOG(LogTemp, Warning, TEXT("SENSE by ENEMY %d"), i);
+			// UE_LOG(LogTemp, Warning, TEXT("SENSE by ENEMY %d"), i);
 			FVector dir = UpdatedActors[i]->GetActorLocation() - GetActorLocation();
 			dir.Z = 0.0f;
 
@@ -143,6 +161,8 @@ void AEnemy::OnSensed(const TArray<AActor *> &UpdatedActors)
 			{
 				CurrentVelocity = dir.GetSafeNormal() * MovementSpeed;
 				BackToBaseLocation = true;
+				isAttacking = false;
+				UE_LOG(LogTemp, Display, TEXT("ENEMY %d goes back to base"), i);
 
 				SetNewRotation(BaseLocation, GetActorLocation());
 			}
@@ -157,4 +177,14 @@ void AEnemy::SetNewRotation(FVector TargetPosition, FVector CurrentPosition)
 
 	EnemyRotation = NewDirection.Rotation();
 	SetActorRotation(EnemyRotation);
+}
+
+void AEnemy::SetMovementAnim(FVector Velocity)
+{
+	// UAnimInstance *AnimInstance = FindComponentByClass<UAnimInstance>();
+	// if (AnimInstance)
+	// {
+	// 	UE_LOG(LogTemp, Warning, TEXT("Got anim instance"));
+	// AnimInstance->set
+	// }
 }

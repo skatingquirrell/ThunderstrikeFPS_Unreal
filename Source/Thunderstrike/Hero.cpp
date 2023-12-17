@@ -98,11 +98,12 @@ void AHero::OnFire()
 
 		World->SpawnActor<AProjectile>(Projectile, SpawnLocation, SpawnRotation, ActorSpawnParams);
 
-		if(FireSound != NULL)
+		if (FireSound != NULL)
 		{
-			UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
+			// TODO: temporarily disable sound
+			//  UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
 
-			if(FireAnimation != NULL && AnimInstance != NULL)
+			if (FireAnimation != NULL && AnimInstance != NULL)
 			{
 				AnimInstance->Montage_Play(FireAnimation, 1.0f);
 			}
@@ -136,4 +137,24 @@ void AHero::TurnAtRate(float Rate)
 void AHero::LookAtRate(float Rate)
 {
 	AddControllerPitchInput(Rate * LookUpRate * GetWorld()->GetDeltaSeconds());
+}
+
+void AHero::DealDamage(float DamageAmount)
+{
+	Health -= DamageAmount;
+	// UE_LOG(LogTemp, Warning, TEXT("HEALTH %f"), Health);
+
+	if (Health <= 0.0f)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("YOU DIED!"));
+
+		// game over, restart game
+		AThunderstrikeGameMode *ThunderstrikeGameMode = Cast<AThunderstrikeGameMode>(UGameplayStatics::GetGameMode(GetWorld()));
+		if (ThunderstrikeGameMode)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("restart game mode"));
+			ThunderstrikeGameMode->RestartGameplay(false);
+		}
+		Destroy();
+	}
 }
