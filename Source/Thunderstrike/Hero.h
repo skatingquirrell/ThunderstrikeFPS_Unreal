@@ -49,6 +49,22 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Gameplay)
 	FVector GunOffset;
 
+	UPROPERTY(EditDefaultsOnly, Category = Projectile)
+	TSubclassOf<class AProjectile> Projectile;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	class USoundBase* FireSound;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	class UAnimMontage* FireAnimation;
+
+	class UAnimInstance* AnimInstance;
+
+	class UWorld* World;
+
+	FRotator SpawnRotation;
+	FVector SpawnLocation;
+
 protected:
 	void OnFire();
 
